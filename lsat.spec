@@ -1,3 +1,5 @@
+# 
+# add weekly cron-job
 Summary:	LSAT - Linux Security Auditing Tool
 Summary(pl):	LSAT - Linuksowe narzêdzie do audytu bezpieczeñstwa
 Name:		lsat
