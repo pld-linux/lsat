@@ -27,6 +27,7 @@ skanuje niepotrzebne pakiety RPM.
 %setup -q
 
 %build
+# It has to be this macro - there is no configure.in included
 %configure2_13
 
 %{__make}
