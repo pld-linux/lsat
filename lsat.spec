@@ -20,8 +20,8 @@ quickly. It checks inetd entries and scans for unneeded RPM packages.
 %description -l pl
 Linux Security Auditing Tool (LSAT) jest narzêdziem do poinstalacyjnego
 audytu bezpieczeñstwa. Jest zrobiony jako modularne narzêdzie, wiêc
-nowe ficzery mog± byæ szybko dodawane. Sprawdza wpisy w inetd oraz 
-skanuje niepotrzebne pakiety RPM. 
+nowe ficzery mog± byæ szybko dodawane. Sprawdza wpisy w inetd oraz
+skanuje niepotrzebne pakiety RPM.
 
 %prep
 %setup -q
