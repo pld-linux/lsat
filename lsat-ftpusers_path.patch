@@ -1,0 +1,78 @@
+--- lsat-0.8.9/checkftpusers.c~	2003-12-16 20:13:56.000000000 +0100
++++ lsat-0.8.9/checkftpusers.c	2003-12-29 18:00:20.641504304 +0100
+@@ -77,7 +77,7 @@
+     }
+ 
+     /* check that /etc/ftpusers exists and is readable first */
+-    if (system("test -r /etc/ftpusers")!=0)
++    if (system("test -r /etc/ftpd/ftpusers")!=0)
+     {
+ 
+         /* we leave this part in even though we might */
+@@ -95,12 +95,12 @@
+         /* give a msg and leave the area.       */
+         fprintf(outfile, "\n****************************************\n");
+         fprintf(outfile, "While checking ftpusers...\n");
+-        fprintf(outfile, "/etc/ftpusers does not exist or is not readable.\n");
++        fprintf(outfile, "/etc/ftpd/ftpusers does not exist or is not readable.\n");
+         fprintf(outfile, "This is ok if you are not root, not\n");
+         fprintf(outfile, "running ftp or your ftp daemon\n");
+-        fprintf(outfile, "does not use /etc/ftpusers.\n");
++        fprintf(outfile, "does not use /etc/ftpd/ftpusers.\n");
+         fprintf(outfile, "Please triple check your configuration\n");
+-        fprintf(outfile, "and ensure you do not need /etc/ftpusers.\n\n");
++        fprintf(outfile, "and ensure you do not need /etc/ftpd/ftpusers.\n\n");
+         fprintf(outfile, "*****************************************\n");
+ 
+ 	/* close up */
+@@ -209,7 +209,7 @@
+ 
+ 
+     /* open /etc/ftpusers for read-only */
+-    ftpfile = fopen("/etc/ftpusers", "r");
++    ftpfile = fopen("/etc/ftpd/ftpusers", "r");
+     if (ftpfile == NULL)
+     {
+         perror(" Can't open ftpusers!\n");
+@@ -280,7 +280,7 @@
+     /* close the tmpfile */
+     fclose(tmpfile);
+ 
+-    header = "These accounts are NOT in /etc/ftpusers.\nEnsure that these accounts are in /etc/ftpusers\nor that they _really_ do not need to be restricted.\n";
++    header = "These accounts are NOT in /etc/ftpd/ftpusers.\nEnsure that these accounts are in /etc/ftpd/ftpusers\nor that they _really_ do not need to be restricted.\n";
+     if ((dostuff(tmp_file, filename, 0, header, html)) < 0)
+     {
+         /* something went wrong */
+--- lsat-0.8.9/modules.html~	2003-12-16 20:01:45.000000000 +0100
++++ lsat-0.8.9/modules.html	2003-12-29 18:03:34.326059776 +0100
+@@ -38,7 +38,7 @@
+ - checks /usr, /var dirs/files for root ownership.
+ 
+ checkftpusers:
+-- checks that all accounts in /etc/passwd are in /etc/ftpusers.
++- checks that all accounts in /etc/passwd are in /etc/ftpd/ftpusers.
+ 
+ checkhostsfiles:
+ - Reads /etc/hosts.allow and /etc/hosts.deny files
+--- lsat-0.8.9/README.exclude~	2003-11-23 16:08:09.000000000 +0100
++++ lsat-0.8.9/README.exclude	2003-12-29 18:03:52.445305232 +0100
+@@ -25,7 +25,7 @@
+ passwd	- checks for baddies in passwd file
+ files 	- performs file checks for insecurities on system
+ umask	- checks for a sensible umask on the system
+-ftpusers- checks for valid /etc/ftpusers and who is in that file
++ftpusers- checks for valid /etc/ftpd/ftpusers and who is in that file
+ rc	- checks rc scripts
+ kbd	- checks for proper perms etc on keyboard
+ limits  - chceks for good limits on files, etc systemwide
+--- lsat-0.8.9/README.modules~	2003-12-16 20:03:07.000000000 +0100
++++ lsat-0.8.9/README.modules	2003-12-29 18:04:12.663231640 +0100
+@@ -28,7 +28,7 @@
+ - checks /usr, /var dirs/files for root ownership.
+ 
+ checkftpusers:
+-- checks that all accounts in /etc/passwd are in /etc/ftpusers.
++- checks that all accounts in /etc/passwd are in /etc/ftpd/ftpusers.
+ 
+ checkhostsfiles:
+ - Reads /etc/hosts.allow and /etc/hosts.deny files
