@@ -11,9 +11,9 @@ Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
 # Source0-md5:	0435a69e54e0f18b1a425bfc2c3abb17
 Patch0:		%{name}-ftpusers_path.patch
 URL:		http://usat.sourceforge.net/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	perl-tools-pod
 BuildRequires:	popt-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Linux Security Auditing Tool (LSAT) is a post install security
@@ -50,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README* *.txt *.html changelog/*.html
 %attr(755,root,root) %{_bindir}/*
-%attr(644,root,root) %{_mandir}/man*/*
+%{_mandir}/man*/*
