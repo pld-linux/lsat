@@ -12,6 +12,8 @@ Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
 Patch0:		%{name}-ftpusers_path.patch
 URL:		http://usat.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	/usr/bin/pod2man
+BuildRequires:	popt-devel
 
 %description
 Linux Security Auditing Tool (LSAT) is a post install security
