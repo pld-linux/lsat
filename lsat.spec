@@ -1,14 +1,14 @@
-# 
-# add weekly cron-job
+# TODO
+# - add weekly cron-job
 Summary:	LSAT - Linux Security Auditing Tool
 Summary(pl):	LSAT - Linuksowe narzêdzie do audytu bezpieczeñstwa
 Name:		lsat
-Version:	0.6.9
+Version:	0.7.3
 Release:	1
 Group:		Applications/System
 License:	GPL v2
-# Source0-md5:	edf7e42395a5ed839df19008ecffe968
 Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
+# Source0-md5:	637a461b2035dcb7a9b9f78e2823558f
 URL:		http://usat.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
