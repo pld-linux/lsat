@@ -8,6 +8,7 @@ Release:	1
 Group:		Applications/System
 License:	GPL v2
 Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
+# Source0-md5:	f63d85ecd7e4ebce093b92ceb3873718
 URL:		http://usat.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
