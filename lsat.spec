@@ -1,0 +1,46 @@
+Summary:	LSAT - Linux Security Auditing Tool
+Summary(pl):	LSAT - Linuksowe narzêdzie do audytu bezpieczeñstwa
+Name:		lsat
+Version:	0.5.7
+Release:	1
+Group:		Applications/System
+License:	GPL v2
+Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
+Patch0:		%{name}-DESTDIR.patch
+URL:		http://usat.sourceforge.net/
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+Linux Security Auditing Tool (LSAT) is a post install security
+auditing tool. It is modular in design, so new features can be added
+quickly. It checks inetd entries and scans for unneeded RPM packages.
+
+%description -l pl
+Linux Security Auditing Tool (LSAT) jest narzêdziem do poinstalacyjnego
+audytu bezpieczeñstwa. Jest zrobiony jako modularne narzêdzie, wiêc
+nowe ficzery mog± byæ szybko dodawane. Sprawdza wpisy w inetd oraz 
+skanuje niepotrzebne pakiety RPM. 
+
+%prep
+%setup -q
+%patch0 -p1
+
+%build
+%configure2_13
+
+%{__make}
+%{__make} manpage
+
+%install
+rm -rf $RPM_BUILD_ROOT
+
+%{__make} DESTDIR=$RPM_BUILD_ROOT install installman
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc README* *.txt *.html changelog/*.html
+%attr(755,root,root) %{_bindir}/*
+%attr(644,root,root) %{_mandir}/man*/*
