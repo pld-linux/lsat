@@ -1,7 +1,7 @@
 # TODO
 # - add weekly cron-job
 Summary:	LSAT - Linux Security Auditing Tool
-Summary(pl):	LSAT - Linuksowe narzêdzie do audytu bezpieczeñstwa
+Summary(pl):	LSAT - linuksowe narzêdzie do audytu bezpieczeñstwa
 Name:		lsat
 Version:	0.9.1
 Release:	0.1
@@ -19,10 +19,10 @@ auditing tool. It is modular in design, so new features can be added
 quickly. It checks inetd entries and scans for unneeded RPM packages.
 
 %description -l pl
-Linux Security Auditing Tool (LSAT) jest narzêdziem do poinstalacyjnego
-audytu bezpieczeñstwa. Jest zrobiony jako modularne narzêdzie, wiêc
-nowe ficzery mog± byæ szybko dodawane. Sprawdza wpisy w inetd oraz
-skanuje niepotrzebne pakiety RPM.
+Linux Security Auditing Tool (LSAT) jest narzêdziem do
+poinstalacyjnego audytu bezpieczeñstwa. Jest zrobiony jako modularne
+narzêdzie, wiêc nowe funkcje mog± byæ szybko dodawane. Sprawdza wpisy
+w inetd oraz skanuje niepotrzebne pakiety RPM.
 
 %prep
 %setup -q
