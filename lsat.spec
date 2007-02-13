@@ -1,7 +1,7 @@
 # TODO
 # - add weekly cron-job
 Summary:	LSAT - Linux Security Auditing Tool
-Summary(pl.UTF-8):   LSAT - linuksowe narzędzie do audytu bezpieczeństwa
+Summary(pl.UTF-8):	LSAT - linuksowe narzędzie do audytu bezpieczeństwa
 Name:		lsat
 Version:	0.9.3
 Release:	0.1
