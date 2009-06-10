@@ -3,12 +3,12 @@
 Summary:	LSAT - Linux Security Auditing Tool
 Summary(pl.UTF-8):	LSAT - linuksowe narzędzie do audytu bezpieczeństwa
 Name:		lsat
-Version:	0.9.6
+Version:	0.9.7.1
 Release:	0.1
 Group:		Applications/System
 License:	GPL v2
 Source0:	http://usat.sourceforge.net/code/%{name}-%{version}.tgz
-# Source0-md5:	6420a32d6d9f8b9da92239bca96d25c5
+# Source0-md5:	441defd1f7f82c5eccd3b5a9f46fe5fa
 Patch0:		%{name}-ftpusers_path.patch
 URL:		http://usat.sourceforge.net/
 BuildRequires:	perl-tools-pod
