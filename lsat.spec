@@ -28,7 +28,7 @@ w inetd oraz skanuje niepotrzebne pakiety RPM.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 # It has to be this macro - there is no configure.in included
